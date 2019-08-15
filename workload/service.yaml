@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: websiteinfo
+  namespace: demo
+  labels:
+    app: websiteinfo
+spec:
+  type: LoadBalancer
+  selector:
+    app: websiteinfo
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
